@@ -1,0 +1,73 @@
+<!-- A HTML student survey form to allow a user to enter the survey data.
+Name: Avinash Arunachalam Arunachalachettiar Murugappan
+Course: SWE 645 spring 2020 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>STUDENT SURVEY FORM</title>
+<link rel = "stylesheet" type = "text/css" href = "css/styles.css" /> 
+</head>
+<body>
+	<h1> <center> STUDENT SURVEY FORM </center> </h1>
+	<h2>Enter Details Below: All fields are Mandatory</h2>
+	<p>Below fields are mandatory</p>
+	<form method="post" action="success.html">
+		<p>
+			<label>First Name: <input name="name" type="text" size="25" required /></label><br>
+			<label>Last Name: <input name="name" type="text" size="25" required/></label><br>
+			<label>Street Address: <input name="address" type="text" size="25" required /></label><br> 
+			<label>City: <input name="city" type="text" size="25" required /></label><br> 
+			<label>State: <input name="state" type="text"size="25" required/></label><br>
+			 <label>Zip: <input name="state" type="text" size="25" required/></label><br> 
+			 <label>Telephone Number: <input name="number" type="tel" size="25" required/></label><br> 
+			 <label>E-mail: <input name="email" type="text"size="25" required/></label><br> 
+			 <label>Date of Survey: <input name="date" type="date" size="25" required/><br>	</label>
+			 </p>
+		<p>
+			<strong>Check the things you liked about the campus:</strong><br/>
+
+			<label>Student: <input name="thingsliked" type="checkbox" value="Design"/></label> 
+			<label>Location: <input name="thingsliked" type="checkbox" value="Links"/></label> 
+			<label>Campus: <input name="thingsliked" type="checkbox" value="Ease"/></label>
+			 <label>Atmosphere: <input name="thingsliked" type="checkbox" value="Images" /></label> 
+			 <label>Dorm Rooms: <input name="thingsliked" type="checkbox" value="Code" /></label>
+			  <label>Sports: <input name="thingsliked" type="checkbox" value="Code" /></label>
+		</p>
+		<p>
+			<strong>How did you become interested in the university?:</strong><br />
+
+			<label>Friends: <input name="howtosite" type="radio" value="friends" checked="checked" /></label> 
+			<label>Television: <input name="howtosite" type="radio" value="television" /></label> 
+			<label>Internet: <input name="howtosite" type="radio" value="internet" /></label>
+			 <label>Others: <input name="howtosite" type="radio" value="other" /></label>
+		</p>
+
+		<p>
+			<label><strong>How likely are you to recommend this university to prospective students?</strong>
+			<select name="rating">
+					<br>
+					<option selected="selected">Very Likely</option>
+					<option>Likely</option>
+					<option>Unlikely</option>
+			</select>
+			</label>
+		</p>
+				<p>
+				<strong>Enter 10 digits beteween1 and 100 seperated by comma</strong>
+				<br>
+			<label>Raffle : <textarea name="comments" rows="1" cols="30"></textarea>
+			</label>
+		</p>
+		<p>
+			<label>Comments: <textarea name="comments" rows="4" cols="36"></textarea>
+			</label>
+		</p>
+		<p>
+			<input type="submit" value="Submit" /> 
+			<input type="reset" value="Cancel" />
+		</p>
+	</form>
+</body>
+</html>
