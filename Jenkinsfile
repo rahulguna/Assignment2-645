@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "sai27/mywebapp"
+    registry = "swe645/assignment2"
     registryCredential = 'docker-hub-credentials'
     dockerImage = ''
   }
