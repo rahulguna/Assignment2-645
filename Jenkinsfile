@@ -18,7 +18,6 @@ node{
    }
 
 stage('Deploy to K8s'){
-  steps{
     sshagent(['kops-machine']) {
     sh "scp -o StrictHostKeyChecking=no services.yml node-app-pod.yml ubuntu@18.206.230.82:/home/ubuntu/"
      script{
@@ -29,7 +28,6 @@ stage('Deploy to K8s'){
       }
     }
    }
-  }
  }
 }
 
