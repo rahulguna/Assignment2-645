@@ -18,7 +18,7 @@ node{
    }
 
 stage('Deploy to K8s'){
-    steps{
+  steps{
     sh "chmod +x changeTag.sh"
     sh "./changeTag.sh ${Docker_TAG}"
     sshagent(['kops-machine']) {
@@ -32,10 +32,7 @@ stage('Deploy to K8s'){
      }
      }
   }
+
 }
-    def getDockerTag(){
-    def tag = sh script:'git rev-parse HEAD', returnStdout: true
-    return tag
-   }
 }
 
