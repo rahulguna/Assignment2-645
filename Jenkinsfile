@@ -1,42 +1,35 @@
-pipeline {
-  environment {
+pipeline {  
+    environment {
     registry = "swe645/assignment2"
-    registryCredential = 'docker-hub-credentials'
-    dockerImage = ''
-  }
-  agent any
+    registryCredential = 'dockerhub'
+  }  
+  agent any  
   stages {
-    stage('Compile') {
+      stage('Cloning Git') {
       steps {
         git 'https://github.com/RAMR645/Assignment2-645.git'
-        
       }
     }
-    stage('Building Docker Image') {
+    stage('Building image') {
       steps{
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
-    stage('Push Image To Docker Hub') {
+    stage('Deploy Image') {
       steps{
         script {
-          /* Finally, we'll push the image with two tags:
-                   * First, the incremental build number from Jenkins
-                   * Second, the 'latest' tag.
-                   * Pushing multiple tags is cheap, as all the layers are reused. */
-          docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-              dockerImage.push("${env.BUILD_NUMBER}")
-              dockerImage.push("latest")
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
           }
         }
       }
     }
-    stage('Deploy to Kubernetes'){
-        steps{
-            sh 'kubectl apply -f deployment.yml'
-       }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:$BUILD_NUMBER"
+      }
     }
   }
 }
