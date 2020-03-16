@@ -21,7 +21,7 @@ stage('Deploy to K8s'){
     sh "chmod +x changeTag.sh"
     sh "./changeTag.sh dock_img"
     sshagent(['kops-machine']) {
-    sh "scp -o StrictHostKeyChecking=no services.yml node-app-pod.yml ubuntu@34.201.57.189/home/ubuntu/"
+    sh "scp -o StrictHostKeyChecking=no services.yml node-app-pod.yml ubuntu@34.201.57.189"
      script{
       try{
         sh "ssh ubuntu@34.201.57.189 kubectl apply -f ."
