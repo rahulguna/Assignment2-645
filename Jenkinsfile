@@ -19,12 +19,12 @@ node{
 
 stage('Deploy to K8s'){
     sshagent(['kops-machine']) {
-    sh "scp -o StrictHostKeyChecking=no services.yml node-app-pod.yml ec2-user@18.206.230.82/home/ubuntu/"
+    sh "scp -o StrictHostKeyChecking=no services.yml node-app-pod.yml ubuntu@34.201.57.189/home/ubuntu/"
      script{
       try{
-        sh "ssh ec2-user@18.206.230.82 kubectl apply -f ."
+        sh "ssh ubuntu@34.201.57.189 kubectl apply -f ."
       }catch(error){
-        sh "ssh ec2-user@18.206.230.82 kubectl create -f ."
+        sh "ssh ubuntu@34.201.57.189 kubectl create -f ."
       }
     }
    }
