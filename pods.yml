@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: nodeapp
-      image: swe645/assignment2:tagVersion
+      image: swe645/assignment2:dock_img
       ports:
         - containerPort: 8080
