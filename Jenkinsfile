@@ -19,7 +19,7 @@ node{
 
 stage('Deploy to K8s'){
     sshagent(['kops-machine']) {
-    sh "scp -o StrictHostKeyChecking=no services.yml pods.yml ubuntu@34.201.57.189/home"
+    sh "scp -o StrictHostKeyChecking=no services.yml pods.yml ubuntu@34.201.57.189/home/ubuntu/"
      script{
       try{
         sh "ssh ubuntu@34.201.57.189 kubectl apply -f ."
