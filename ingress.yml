@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: swe_645
-  namespace: my-app
+  namespace: default
 spec:
   rules:
   - host: swe.10.109.188.55.k8s.gigantic.io
