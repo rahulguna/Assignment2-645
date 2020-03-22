@@ -22,9 +22,9 @@ stage('Deploy to K8s'){
     sh "scp -o StrictHostKeyChecking=no services.yml pods.yml deployment.yaml ubuntu@54.234.176.195:/home/ubuntu/"
      script{
       try{
-        sh "ssh ubuntu@54.234.176.195 kubectl apply -f /home/ubuntu/"
-      }catch(error){
         sh "ssh ubuntu@54.234.176.195 kubectl create -f /home/ubuntu/"
+      }catch(error){
+        sh "ssh ubuntu@54.234.176.195 kubectl apply -f /home/ubuntu/"
       }
     }
    }
