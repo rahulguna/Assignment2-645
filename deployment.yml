@@ -12,6 +12,6 @@ spec:
     spec:
       containers:
       - name: swe645
-        image: swe645/assignment
+        image: swe645/assignment2:dock_img
         ports:
         - containerPort: 80
