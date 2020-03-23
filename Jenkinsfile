@@ -36,7 +36,7 @@ stage('Deploy to K8s'){
  }
 }
 def getDockerTag() {
-    def tag = sh script: 'git rev-parse HEAD', returnStdout:true
+    def tag = sh "git rev-parse HEAD"
       return tag
    }
 
