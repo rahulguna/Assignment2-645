@@ -15,13 +15,13 @@ node{
      sh "${mvnCMD} clean package"
    }
    stage('Build Docker Image'){
-      sh 'docker build -t swe645/assignment2:${DOCKER_TAG}'
+      sh "docker build -t swe645/assignment2:${DOCKER_TAG}"
    }
    stage('Push Docker Image'){
      withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
         sh "docker login -u swe645 -p ${dockerHubPwd}"
      }
-      sh 'docker push swe645/assignment2:${DOCKER_TAG}'
+      sh "docker push swe645/assignment2:${DOCKER_TAG}"
    }
 
 stage('Deploy to K8s'){
