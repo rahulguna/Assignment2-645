@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: deployment-example
+spec:
+  replicas: 3
+  revisionHistoryLimit: 2
+  template:
+    metadata:
+      labels:
+        app: swe645
+    spec:
+      containers:
+      - name: swe645
+        image: swe645/assignment
+        ports:
+        - containerPort: 80
