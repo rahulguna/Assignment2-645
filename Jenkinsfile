@@ -19,14 +19,8 @@ node{
 
 stage('Deploy to K8s'){
     sshagent(['kops-machine']) {
-    sh "scp -o StrictHostKeyChecking=no services.yml deployment.yaml ubuntu@54.234.176.195:/home/ubuntu/"
-     script{
-      try{
-        sh "ssh ubuntu@54.234.176.195 kubectl create -f /home/ubuntu/"
-      }catch(error){
-        sh "ssh ubuntu@54.234.176.195 kubectl apply -f /home/ubuntu/"
-      }
-    }
+    sh "ssh ubuntu@54.234.176.195 kubectl run mypod-74d845d95c-2mm8h --image=docker.io/swe645/assignment2:dock_img --port=8080"
+       
    }
  }
 }
