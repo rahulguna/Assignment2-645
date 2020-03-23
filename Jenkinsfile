@@ -4,7 +4,7 @@ def getDockerTag() {
    }
 node{
    environment {
-    DOCKER_TAG = getDockerTag()  
+      
    }
    stage('SCM Checkout'){
        git credentialsId: 'git-creds', url: 'https://github.com/RAMR645/Assignment2-645.git'
@@ -15,6 +15,7 @@ node{
      sh "${mvnCMD} clean package"
    }
    stage('Build Docker Image'){
+       DOCKER_TAG = getDockerTag()
       sh "docker build -t swe645/assignment2:${DOCKER_TAG}"
    }
    stage('Push Docker Image'){
