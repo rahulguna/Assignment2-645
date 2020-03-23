@@ -20,8 +20,9 @@ node{
 stage('Deploy to K8s'){
     sshagent(['kops-machine']) {
     sh "ssh ubuntu@54.234.176.195 kubectl run mypod-74d845d95c-2mm8h --image=docker.io/swe645/assignment2:dock_img --port=8080"
-       
-   }
+    sh "ssh ubuntu@54.234.176.195 kubectl expose deployment mypod-74d845d95c-2mm8h --type=LoadBalancer --port=8080 --target-port=8080"   
+    sh "ssh ubuntu@54.234.176.195 kubectl patch svc mypod-74d845d95c-2mm8h -n default -p '{"spec": {"type": "LoadBalancer", "externalIPs":["54.146.44.243"]}}'"
+    }
  }
 }
 
