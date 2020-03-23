@@ -1,3 +1,7 @@
+def getDockerTag() {
+    def tag = sh script: 'git rev-parse HEAD' , returnStdout: true
+      return tag
+   }
 node{
    environment {
     DOCKER_TAG = getDockerTag()  
@@ -35,8 +39,5 @@ stage('Deploy to K8s'){
     }
  }
 }
-def getDockerTag() {
-    def tag = sh "git rev-parse HEAD"
-      return tag
-   }
+
 
