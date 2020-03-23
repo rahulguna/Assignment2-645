@@ -6,7 +6,7 @@ spec:
   ports:
     - name: http
       port: 80
-      nodePort: 30128
+      nodePort: 30222
   selector:
     app: swe645
   type: LoadBalancer
