@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: swe-service
+  name: swe645service
 spec:
   ports:
     - name: http
