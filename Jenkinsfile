@@ -8,7 +8,7 @@ node{
      sh "${mvnCMD} clean package"
    }
    stage('Build Docker Image'){
-      sh 'docker build -t swe645/assignment2:dock_img'
+      sh 'docker build -t swe645/assignment2:dock_img .'
    }
    stage('Push Docker Image'){
      withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
