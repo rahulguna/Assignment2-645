@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: swe645-service
+  name: swe-service
 spec:
   ports:
     - name: http
       port: 80
-      nodePort: 30062
+      nodePort: 30128
   selector:
-    app: mypod-74d845d95c-2mm8h
+    app: swe645
   type: LoadBalancer
