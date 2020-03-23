@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: swe645service
+  name: nodeapp
 spec:
-  ports:
-    - name: http
-      port: 80
-      nodePort: 30222
   selector:
-    app: swe645
-  type: LoadBalancer
+    app: nodeapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer   
