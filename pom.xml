@@ -1,6 +1,6 @@
-#SWE 645 Assignment2, Team members:Avinash, Rashi, Rushil, Mithilesh.
+<!-- SWE 645 Assignment2, Team members:Avinash, Rashi, Rushil, Mithilesh.-->
 
-#This file contains information of project and configuration information for the maven to build the project 
+<!-- This file contains information of project and configuration information for the maven to build the project --> 
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
