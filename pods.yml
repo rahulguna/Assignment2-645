@@ -1,3 +1,9 @@
+#SWE 645 Assignment2, Team members:Avinash, Rashi, Rushil, Mithilesh.
+
+
+#This file create the pods for kubernetes 
+
+
 apiVersion: v1
 kind: Pod
 metadata:
